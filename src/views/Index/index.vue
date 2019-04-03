@@ -38,16 +38,10 @@ import { State, Getter, Mutation, Action } from 'vuex-class'
 import { Row, Col, Icon, Cell, CellGroup } from 'vant';
 import { IndexIF } from '@/interface/index'
 
-@Component({
-    components: {
-      [Row.name]: Row,
-      [Col.name]: Col,
-      [Icon.name]: Icon,
-      [Cell.name]: Cell,
-      [CellGroup.name]: CellGroup,
-    }
-})
-export default class Index extends Vue {
+import vantUI from '@/vantUI'
+
+@Component
+export default class Index extends vantUI {
     private indexData!: IndexIF // 定义Index data的类型
     constructor() {
         super()
@@ -61,6 +55,10 @@ export default class Index extends Vue {
     changeName(): string {
         this.indexData.name = ''
         return this.indexData.name
+    }
+
+    public created() {
+
     }
 }
 </script>
