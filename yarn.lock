@@ -635,6 +635,10 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/lodash@^4.14.123":
+  version "4.14.123"
+  resolved "http://registry.npm.taobao.org/@types/lodash/download/@types/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "http://registry.npm.taobao.org/@types/minimatch/download/@types/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -1299,6 +1303,10 @@ bluebird@^3.1.1, bluebird@^3.5.1, bluebird@^3.5.3:
   version "3.5.3"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-3.5.3.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fbluebird%2Fdownload%2Fbluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
 
+blueimp-canvas-to-blob@^3.14.0:
+  version "3.14.0"
+  resolved "http://registry.npm.taobao.org/blueimp-canvas-to-blob/download/blueimp-canvas-to-blob-3.14.0.tgz#ea075ffbfb1436607b0c75e951fb1ceb3ca0288e"
+
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "http://registry.npm.taobao.org/bn.js/download/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
@@ -1783,6 +1791,13 @@ compression@^1.5.2:
     on-headers "~1.0.2"
     safe-buffer "5.1.2"
     vary "~1.1.2"
+
+compressorjs@^1.0.5:
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/compressorjs/download/compressorjs-1.0.5.tgz#b02735a802177447a7a14d07d63cfff61c7580dd"
+  dependencies:
+    blueimp-canvas-to-blob "^3.14.0"
+    is-blob "^2.0.1"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -3384,6 +3399,10 @@ is-binary-path@^1.0.0:
   resolved "http://registry.npm.taobao.org/is-binary-path/download/is-binary-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
   dependencies:
     binary-extensions "^1.0.0"
+
+is-blob@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/is-blob/download/is-blob-2.0.1.tgz#7fde57ef8782a154bc0f3bdcaa0ffdccb6c33767"
 
 is-buffer@^1.1.5:
   version "1.1.6"
@@ -6021,6 +6040,10 @@ statuses@~1.4.0:
 stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/stealthy-require/download/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
+
+store2@^2.7.1:
+  version "2.7.1"
+  resolved "http://registry.npm.taobao.org/store2/download/store2-2.7.1.tgz#22070b7dc04748a792fc6912a58ab99d3a21d788"
 
 stream-browserify@^2.0.1:
   version "2.0.2"

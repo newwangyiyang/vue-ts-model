@@ -1,6 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 // vant 组件
-import { Row, Col, Icon, Cell, CellGroup, Button, Field, Tab, Tabs, Tag, Toast, Dialog } from 'vant'
+import { Row, Col, Icon, Cell, CellGroup, Button, Field, Tab, Tabs, Tag, Toast, Dialog, Uploader } from 'vant'
 // 全局过滤器注册
 import * as filters from '@/filter/index'
 // 全局指令 吸顶
@@ -19,7 +19,8 @@ import {ErrorBag, FieldFlagsBag, Validator} from 'vee-validate'
         [Field.name]: Field,
         [Tab.name]: Tab,
         [Tabs.name]: Tabs,
-        [Tag.name]: Tag
+        [Tag.name]: Tag,
+        [Uploader.name]: Uploader,
     },
     // 定义全局filters
     filters: {
@@ -39,4 +40,5 @@ export default class vantUI extends Vue{
     $validator!: Validator // 声明参数校验的类型
     errors!: ErrorBag
     fields!: FieldFlagsBag
+    $dialog!: Dialog
 }

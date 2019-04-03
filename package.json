@@ -7,8 +7,11 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@types/lodash": "^4.14.123",
     "axios": "^0.18.0",
+    "compressorjs": "^1.0.5",
     "dayjs": "^1.8.12",
+    "store2": "^2.7.1",
     "vant": "^1.6.12",
     "vee-validate": "^2.2.0",
     "vue": "^2.6.6",
