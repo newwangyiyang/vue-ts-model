@@ -35,14 +35,13 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch, Provide, Inject } from 'vue-property-decorator'
 import { State, Getter, Mutation, Action } from 'vuex-class'
-import { Row, Col, Icon, Cell, CellGroup } from 'vant';
-import { IndexIF } from '@/interface/index'
+import { IndexData } from '@/interface/dataIF'
 
-import vantUI from '@/vantUI'
+import VantUI from '@/vantUI'
 
 @Component
-export default class Index extends vantUI {
-    private indexData!: IndexIF // 定义Index data的类型
+export default class Index extends VantUI {
+    private indexData!: IndexData // 定义Index data的类型
     constructor() {
         super()
         this.indexData = {

@@ -35,21 +35,33 @@
             <van-icon name="photograph" />
         </van-uploader>
         <img :src="imgSrc" alt="">
+        <!-- 自定义组件 -->
+        <item @getStr="showStr" str="这世界没有什么是我"/>
     </div>
 </template>
 
 <script lang="ts">
-import vantUI from '@/vantUI'
-import { Component, Vue, Watch } from 'vue-property-decorator'
+import VantUI from '@/vantUI'
+import { Component, Watch, Inject } from 'vue-property-decorator'
 import getParams from '@/utils/getParams'
 import store from 'store2' // store(ket, value) set  // store(key) get // store(false) clearAll
 
-import { WebFile } from '@/interface/index'
-
+import { HomeState, MyState } from '@/interface/storeIF' // 参数限定接口
+import { WebFileParams } from '@/interface/paramIF'
 import Compressor from 'compressorjs'; // 图片压缩
-import * as _ from 'lodash'
-@Component
-export default class Home extends vantUI {
+
+import item from './components/item.vue'
+
+import _ from 'lodash'
+import { Getter, State, Mutation, Action } from 'vuex-class';
+
+@Component({
+    components: {
+        item
+    }
+})
+export default class Home extends VantUI {
+    // 自定义属性data及构造函数 Start
     private num: number
     private value: string
     private value1: string
@@ -67,17 +79,43 @@ export default class Home extends vantUI {
         this.active = 0
         this.imgSrc = ''
     }
+    // 自定义属性data及构造函数 End
+    // 生命周期函数 Start
     created() {
-        console.log(getParams('id')) 
-        console.log(store())
-        console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }))
+        // console.log(getParams('id')) 
+        // console.log(store())
+        // console.log(_.defaults({ 'a': 1 }, { 'a': 3, 'b': 2 }))
     }
+    mounted() {
+        // 调用Mutations
+        this.SetNewName('木子家')
+        console.log(this.hAddress)
+        console.log(this.hName)
+        // 调用Actions
+        this.getAllHcDataActions('goog')
+    }
+    // 生命周期函数 End
+
+    // 获取@Provide对外抛出的方法和属性
+    @Inject() readonly reload!: Function
+    @Inject() readonly reloadTrue!: boolean
+
+    // 属性监听 Watch
     @Watch('value', {deep: true, immediate: true}) // 深度和立即监听
     change(newValue: string, oldValue: string) {
-        console.log(newValue)
+        // console.log(newValue)
     }
+    // 获取Store中存储的数据
+    @Getter readonly hAddress!: string
+    @State((state: MyState) => state.home.hName) readonly hName!: string
+
+    @Mutation readonly SetNewName!: Function
+    @Action readonly getAllHcDataActions!: Function
+
+    // 自定义事件
     submitValue() {
         this.$toast('你好信息')
+        // this.reload()
         this.$validator.validate().then((res: boolean): void => {
             console.log(res)
         })
@@ -92,7 +130,7 @@ export default class Home extends vantUI {
             console.log(res)
         })
     }
-    onRead(files: WebFile) {
+    onRead(files: WebFileParams) {
         const that = this
         new Compressor(files.file, {
             quality: 0.6,
@@ -109,7 +147,11 @@ export default class Home extends vantUI {
             },
         });
     }
-
+    showStr(str: string): void {
+        console.log(str)
+        // @provide抛出的方法调用
+        this.reload()
+    }
 }
 </script>
 

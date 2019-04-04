@@ -12,7 +12,7 @@ import VeeValidate from 'vee-validate';
 import '@/form/myFormValidate'
 
 import App from './App.vue'
-import router from './routes/router'
+import router from './routes'
 import store from './store'
 
 Vue.config.productionTip = false

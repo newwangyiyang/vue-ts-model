@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view v-if="reloadViewAlive" />
   </div>
 </template>
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
-
+import { Component, Provide, Vue } from 'vue-property-decorator'
+import vantUI from './vantUI'
 @Component
-export default class App extends Vue {}
+export default class App extends Vue {
+  private reloadViewAlive = true
+
+
+  @Provide() reloadTrue = this.reloadViewAlive
+
+  @Provide() // 对外抛出reload重载方法，提供刷新页面功能
+  reload() {
+    this.reloadViewAlive = false
+    this.$nextTick(() => {
+      this.reloadViewAlive = true
+    })
+  }
+}
 </script>
 <style lang="less">
 img {

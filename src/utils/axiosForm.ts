@@ -4,7 +4,7 @@ import qs from 'qs'
 
 //已form表单进行提交
 const axiosForm = axios.create({
-  baseURL: 'https://api.myjson.cm/',
+  baseURL: 'process.env.VUE_APP_BASE_URL',
   timeout: 20000,
   headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
 });
