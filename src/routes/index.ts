@@ -7,8 +7,8 @@ Vue.use(Router)
 //固定展示的路由， 如果非开启权限分配功能，将全部路由添加到此处 ↓
 export const constantRouterMap: RouteConfig[] = [
   {
-    path: '/Login',
-    name: 'Login',
+    path: '/login',
+    name: 'login',
     component: () => import(/* webpackChunkName: "Login" */ '@/views/Login/index.vue'),
     meta: {
       title: '登录'
@@ -16,29 +16,28 @@ export const constantRouterMap: RouteConfig[] = [
   },
   {
     path: '/',
-    name: 'Index',
+    name: 'index',
     component: () => import(/* webpackChunkName: "Index" */ '@/views/Index/index.vue'),
     meta: {
-      title: '首页',
-      roles: ['user']
+      title: '首页'
     }
   },
-  {
-    path: '/Home',
-    name: 'Home',
-    component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
-    meta: {
-      title: 'Home',
-      roles: ['user']
-    }
-  }
 ];
 
 //根据权限分配的路由
 export const asyncRouterMap: RouteConfig[] = [
   {
-    path: '/Admin',
-    name: 'Admin',
+    path: '/home',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
+    meta: {
+      title: 'home',
+      roles: ['user']
+    }
+  },
+  {
+    path: '/admin',
+    name: 'admin',
     component: () => import(/* webpackChunkName: "Index" */ '@/views/Admin/index.vue'),
     meta: {
       title: '管理员',

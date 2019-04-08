@@ -17,7 +17,7 @@ import store from './store'
 
 Vue.config.productionTip = false
 // 4、全局变量权限是否开启，需额外在 typings/tools.d.ts文件里面进行类型注册
-Vue.prototype.$openPremission = false
+Vue.prototype.$openPremission = true
 
 Vue.use(VueClipboard).use(VeeValidate, {events: 'blur|input'})
 
