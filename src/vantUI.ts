@@ -41,4 +41,5 @@ export default class VantUI extends Vue{
     errors!: ErrorBag
     fields!: FieldFlagsBag
     $dialog!: Dialog
+    $openPremission!: boolean
 }
