@@ -105,16 +105,19 @@
 
 // 禁止换行, 文本溢出省略号显示 (一行)
 .ellipsis() {
-  white-space: normal; word-wrap: break-word; word-break: break-all;
-  text-overflow:ellipsis; overflow:hidden;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 
 // 文本溢出省略号显示 (多行)
 // 只支持 webkit 浏览器, 解决方案：高度 = 行高*行数
 // height: 90px; line-height: 30px; -webkit-line-clamp: 3;
 .ellipsis-mult(@n: 3) {
-  display: -webkit-box; box-orient: vertical; line-clamp: @n; word-break: break-all;
-  text-overflow:ellipsis; overflow: hidden;
+  display: -webkit-box;
+  box-orient: vertical;
+  line-clamp: @n;
+  overflow: hidden;
 }
 
 // 书写模式：牌匾从右至左水平单行排版效果、文笺从右至左、从上至下排版效果
