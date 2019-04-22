@@ -30,6 +30,18 @@ export const constantRouterMap: RouteConfig[] = [
       title: 'home',
     }
   },
+  {
+    path: '/404',
+    name: 'Page404',
+    component: () => import(/* webpackChunkName: "Index" */ '@/views/404.vue'),
+    meta: {
+      title: '未找到页面',
+    }
+  },
+  {
+    path: '*',
+    redirect: '/404'
+  }
 ];
 
 //根据权限分配的路由
