@@ -125,10 +125,10 @@ export default class MyLogin extends MyVantUI {
 
     private login() { // 2、 系统登录
         if(this.tabActive===0) {
+            this.$router.push({name: 'index'})
             this.$validator.validateAll('phone').then(res => {
                 if(res) {
                     this.$toast('登陆成功')
-                    this.$router.push({name: 'home'})
                 } else {
                     this.$toast('登陆失败')
                 }

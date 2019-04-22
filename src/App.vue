@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <router-view v-if="reloadViewAlive" />
+    <transition
+      name="fade-transform"
+      mode="out-in"
+    >
+      <!-- or name="fade" -->
+      <!-- <router-view :key="key"></router-view> -->
+      <router-view />
+    </transition>
   </div>
 </template>
 <script lang="ts">

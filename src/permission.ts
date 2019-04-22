@@ -4,7 +4,10 @@ import Vue from 'vue';
 import s from 'store2'
 // 引入浏览器顶部状态条
 import NProgress from 'nprogress';
+import 'nprogress/nprogress.css'
 import '@/assets/less/nprogress.less'
+// 页面的过渡动画
+import '@/assets/less/transition.less'
 
 //设置不需要权限验证页面的白名单
 const whiteList = ['/login']// no redirect whitelist
