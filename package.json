@@ -11,6 +11,7 @@
     "axios": "^0.18.0",
     "compressorjs": "^1.0.5",
     "dayjs": "^1.8.12",
+    "nprogress": "^0.2.0",
     "store2": "^2.7.1",
     "vant": "^1.6.12",
     "vee-validate": "^2.2.0",

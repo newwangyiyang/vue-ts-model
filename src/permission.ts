@@ -2,10 +2,16 @@ import router from './routes'
 import store from './store'
 import Vue from 'vue';
 import s from 'store2'
+// 引入浏览器顶部状态条
+import NProgress from 'nprogress';
+import '@/assets/less/nprogress.less'
+
 //设置不需要权限验证页面的白名单
 const whiteList = ['/login']// no redirect whitelist
 
 router.beforeEach(async (to, from, next) => {
+  NProgress.start()
+
   // 动态设置title***start***
   if(to.meta.title) {
     document.title = to.meta.title
@@ -50,4 +56,5 @@ router.beforeEach(async (to, from, next) => {
 
 router.afterEach(() => {
   // console.log(router);
+  NProgress.done()
 });

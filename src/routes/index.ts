@@ -25,6 +25,11 @@ export const constantRouterMap: RouteConfig[] = [
   {
     path: '/home',
     name: 'home',
+    beforeEnter(to, from, next) {
+      setTimeout(() => {
+        next()
+      }, 10000)
+    },
     component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
     meta: {
       title: 'home',
