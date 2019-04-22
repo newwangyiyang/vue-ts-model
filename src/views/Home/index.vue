@@ -41,7 +41,7 @@
 </template>
 
 <script lang="ts">
-import VantUI from '@/vantUI'
+import MyVantUI from '@/MyVantUI'
 import { Component, Watch, Inject } from 'vue-property-decorator'
 import getParams from '@/utils/getParams'
 import store from 'store2' // store(ket, value) set  // store(key) get // store(false) clearAll
@@ -60,7 +60,7 @@ import { Getter, State, Mutation, Action } from 'vuex-class';
         item
     }
 })
-export default class Home extends VantUI {
+export default class Home extends MyVantUI {
     // 自定义属性data及构造函数 Start
     private num: number
     private value: string

@@ -37,11 +37,11 @@ import { Component, Vue, Prop, Watch, Provide, Inject } from 'vue-property-decor
 import { State, Getter, Mutation, Action } from 'vuex-class'
 import { IndexData } from '@/interface/dataIF'
 
-import VantUI from '@/vantUI'
+import MyVantUI from '@/MyVantUI'
 
 @Component
-export default class Index extends VantUI {
-    private indexData!: IndexData // 定义Index data的类型
+export default class Index extends MyVantUI {
+    private indexData: IndexData // 定义Index data的类型
     constructor() {
         super()
         this.indexData = {

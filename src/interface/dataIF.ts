@@ -1,3 +1,9 @@
+
+
+export interface LoginDataIF {
+    userphone: string
+    usercode: string
+}
 /**
  *首页data类型
  *

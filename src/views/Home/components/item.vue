@@ -6,9 +6,9 @@
 
 <script lang="ts">
 import { Component, Prop, Emit, Vue } from 'vue-property-decorator'
-import vantUI from '@/vantUI'
+import MyVantUI from '@/MyVantUI'
 @Component
-export default class Item extends Vue {
+export default class Item extends MyVantUI {
     @Prop({type: String, default: '321', required: true}) readonly str!: string
 
     @Emit('getStr')

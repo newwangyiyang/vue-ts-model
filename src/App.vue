@@ -5,9 +5,9 @@
 </template>
 <script lang="ts">
 import { Component, Provide, Vue } from 'vue-property-decorator'
-import vantUI from './vantUI'
+import MyVantUI from '@/MyVantUI'
 @Component
-export default class App extends Vue {
+export default class App extends MyVantUI {
   private reloadViewAlive = true
 
 

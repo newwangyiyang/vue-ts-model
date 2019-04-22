@@ -22,6 +22,14 @@ export const constantRouterMap: RouteConfig[] = [
       title: '首页'
     }
   },
+  {
+    path: '/home',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
+    meta: {
+      title: 'home',
+    }
+  },
 ];
 
 //根据权限分配的路由

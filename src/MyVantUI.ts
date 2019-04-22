@@ -35,7 +35,7 @@ import {ErrorBag, FieldFlagsBag, Validator} from 'vee-validate'
         'sticky': VueSticky,
     }
 })
-export default class VantUI extends Vue{
+export default class MyVantUI extends Vue{
     $toast!: Toast // 需要声明$Toast的类型
     $validator!: Validator // 声明参数校验的类型
     errors!: ErrorBag

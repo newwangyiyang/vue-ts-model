@@ -1,7 +1,7 @@
 import router from './routes'
 import store from './store'
 import Vue from 'vue';
-import storeLocal from 'store2'
+import s from 'store2'
 //设置不需要权限验证页面的白名单
 const whiteList = ['/login']// no redirect whitelist
 
@@ -14,7 +14,7 @@ router.beforeEach(async (to, from, next) => {
 
   if (Vue.prototype.$openPremission) { // 开启权限
     // store.getters.token
-    if(storeLocal('token')) { // 如果存在token， 则进行token验证 ，，，通过Login登录页面来获取token
+    if(s('token')) { // 如果存在token， 则进行token验证 ，，，通过Login登录页面来获取token
       if(to.path === '/login') {
         next('/')
       } else {

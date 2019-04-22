@@ -6,10 +6,10 @@
 
 <script lang="ts">
 import { Component } from 'vue-property-decorator'
-import VantUI from '@/vantUI';
+import MyVantUI from '@/MyVantUI';
 
 @Component
-export default class Admin extends VantUI {
+export default class Admin extends MyVantUI {
 
 }
 </script>

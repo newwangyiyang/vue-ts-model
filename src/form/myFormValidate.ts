@@ -48,6 +48,12 @@ Validator.extend('phone', {
 })
 
 
+Validator.extend('code', {
+    getMessage: (field: string): string => `${field}错误`,
+    validate: (value: string): boolean => /^\d{4}$/.test(value)
+})
+
+
 
 //接收v-validate中传递的参数   例如: v-validate="'required|numBetween:10,100'"
 //                                                                  min, max
