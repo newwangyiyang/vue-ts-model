@@ -34,15 +34,15 @@ export const constantRouterMap: RouteConfig[] = [
 
 //根据权限分配的路由
 export const asyncRouterMap: RouteConfig[] = [
-  {
-    path: '/home',
-    name: 'home',
-    component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
-    meta: {
-      title: 'home',
-      roles: ['user']
-    }
-  },
+  // {
+  //   path: '/home',
+  //   name: 'home',
+  //   component: () => import(/* webpackChunkName: "Index" */ '@/views/Home/index.vue'),
+  //   meta: {
+  //     title: 'home',
+  //     roles: ['user']
+  //   }
+  // },
   {
     path: '/admin',
     name: 'admin',
