@@ -1,6 +1,17 @@
 import { Component, Vue } from 'vue-property-decorator'
+
+// 3、 复制文本指令  v-clipboard:copy="'这世界你是个错误'" 进行使用
+// v-clipboard:success="onCopy" 监听成功
+// v-clipboard:error="onError" 监听失败
+import VueClipboard from 'vue-clipboard2'
+// 5、引入v-validate参数校验工具
+import VeeValidate from 'vee-validate';
+import '@/form/myFormValidate'
+
 // vant 组件
 import { Row, Col, Icon, Cell, CellGroup, Button, Field, Tab, Tabs, Tag, Toast, Dialog, Uploader } from 'vant'
+
+Vue.use(VueClipboard).use(VeeValidate, {events: 'blur|input'}).use(Dialog)
 // 全局过滤器注册
 import * as filters from '@/filter/index'
 // 全局指令 吸顶
