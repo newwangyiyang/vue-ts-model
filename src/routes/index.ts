@@ -19,7 +19,8 @@ export const constantRouterMap: RouteConfig[] = [
     name: 'index',
     component: () => import(/* webpackChunkName: "Index" */ '@/views/Index/index.vue'),
     meta: {
-      title: '首页'
+      title: '首页',
+      keepAlive: true //如果需要缓存当前组件，设置成true
     }
   },
   {
@@ -75,13 +76,18 @@ export const asyncRouterMap: RouteConfig[] = [
 
 
 export default new Router({
+  mode: 'hash',
   routes: constantRouterMap,
   scrollBehavior(to, from, savedPosition) {
     //设置所有跳转后的路由都滚动到顶部
-    if (savedPosition) {
-      return savedPosition
-    } else {
-      return { x: 0, y: 0 }
-    }
+
+    // 由于当前配置了keepAlive缓存，所以现在对跳转路由防护顶部进行注释，需要根据逻辑进行适配
+    // 注意: 这个功能只在支持 history.pushState 的浏览器中可用。
+
+    // if (savedPosition) {
+    //   return savedPosition
+    // } else {
+    //   return { x: 0, y: 0 }
+    // }
   }
 })

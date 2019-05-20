@@ -78,6 +78,7 @@ import { Component } from 'vue-property-decorator'
 import { LoginDataIF } from '@/interface/dataIF';
 import VER from '@/components/VER/index.vue'
 import s from 'store2'
+import { Route } from 'vue-router';
 
 @Component({
     components: {
@@ -144,6 +145,7 @@ export default class MyLogin extends MyVantUI {
         }
     }
 
+    
 }
 
 </script>

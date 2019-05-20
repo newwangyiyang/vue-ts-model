@@ -32,6 +32,11 @@ export interface PermissionState {
     routers: RouteConfig[] // 所有的路由信息
     addRouters: RouteConfig[] // 新增的路由信息
 }
+
+export interface KeepAliveStoreIF {
+    keepAliveComponent: string[]
+}
+
 /**
  *vuex中State的所有参数类型
  *
@@ -42,4 +47,5 @@ export interface MyState {
     home: HomeState
     user: UserState
     permission: PermissionState
+    keepAlive: KeepAliveStoreIF
 }

@@ -6,7 +6,9 @@
     >
       <!-- or name="fade" -->
       <!-- <router-view :key="key"></router-view> -->
-      <router-view />
+      <keep-alive :include="keepAliveComponent">
+        <router-view />
+      </keep-alive>
     </transition>
   </div>
 </template>
@@ -26,6 +28,9 @@ export default class App extends MyVantUI {
     this.$nextTick(() => {
       this.reloadViewAlive = true
     })
+  }
+  private get keepAliveComponent() {
+    return this.$store.getters.keepAliveComponent
   }
 }
 </script>

@@ -4,7 +4,7 @@
         <van-row class="user-links">
             <van-col span="6">
                 <van-icon name="pending-payment" />
-                待付款
+                <router-link :to="{name: 'login'}">待付款</router-link>
             </van-col>
             <van-col span="6">
                 <van-icon name="records" />
@@ -19,6 +19,12 @@
                 已发货
             </van-col>
         </van-row>
+        <van-tabs v-model="active">
+            <van-tab title="标签 1">内容 1</van-tab>
+            <van-tab title="标签 2">内容 2</van-tab>
+            <van-tab title="标签 3">内容 3</van-tab>
+            <van-tab title="标签 4">内容 4</van-tab>
+        </van-tabs>
 
         <van-cell-group class="user-group">
             <van-cell icon="records" title="全部订单" is-link />
@@ -29,6 +35,44 @@
             <van-cell icon="gold-coin-o" title="我的优惠券" is-link />
             <van-cell icon="gift-o" title="我收到的礼物" is-link />
         </van-cell-group>
+        <div>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam vitae repudiandae veritatis suscipit ad quaerat aperiam, ipsam esse, rerum ullam officiis? Necessitatibus modi autem accusamus itaque saepe. Ad, voluptate eaque?
+            </p>
+        </div>
     </div>
 </template>
 
@@ -38,10 +82,14 @@ import { State, Getter, Mutation, Action } from 'vuex-class'
 import { IndexData } from '@/interface/dataIF'
 
 import MyVantUI from '@/MyVantUI'
+import { Route } from 'vue-router';
 
-@Component
+@Component({
+    name: 'index',
+})
 export default class Index extends MyVantUI {
     private indexData: IndexData // 定义Index data的类型
+    private active: number = 0
     constructor() {
         super()
         this.indexData = {
@@ -59,6 +107,13 @@ export default class Index extends MyVantUI {
     public created() {
 
     }
+
+    beforeRouteLeave(to: Route, from: Route, next: Function) {
+        from.meta.keepAlive = false //（如果不需要再缓存当前组件，设置为false即可）
+        next()
+    }
+    
+    
 }
 </script>
 

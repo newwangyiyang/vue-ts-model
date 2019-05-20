@@ -9,6 +9,8 @@ const getters = {
     token: (state: MyState) => state.user.token,
     // permission
     addRouters: (state: MyState) => state.permission.addRouters,
+    // keepAlive
+    keepAliveComponent: (state: MyState) => state.keepAlive.keepAliveComponent
 };
 
 export default getters;

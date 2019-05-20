@@ -18,6 +18,14 @@ import * as filters from '@/filter/index'
 import VueSticky from 'vue-sticky'
 // 参数校验 vee-validate
 import {ErrorBag, FieldFlagsBag, Validator} from 'vee-validate'
+
+
+Component.registerHooks([
+    'beforeRouteEnter',
+    'beforeRouteLeave',
+    'beforeRouteUpdate' // for vue-router 2.2+
+])
+
 @Component({
     // 定义全局组件 vant
     components: {

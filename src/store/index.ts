@@ -8,11 +8,13 @@ import getters from './getters'
 import home from './modules/home'
 import user from './modules/user'
 import permission from './modules/permission'
+import keepAlive from './modules/keepAlive'
 const store = new Vuex.Store({
   modules: {
     home,
     user,
-    permission
+    permission,
+    keepAlive
   },
   getters
 })

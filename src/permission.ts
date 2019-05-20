@@ -14,12 +14,20 @@ const whiteList = ['/login']// no redirect whitelist
 
 router.beforeEach(async (to, from, next) => {
   NProgress.start()
-
   // 动态设置title***start***
   if(to.meta.title) {
     document.title = to.meta.title
   }
   // 动态设置title***end***  
+  // 设置缓存哪些组件
+  if(to.meta.keepAlive) {
+    store.commit('UPDATE_KEEPALIVECOMPONENTS', {k: to.name, b: true})
+  } else {
+    store.commit('UPDATE_KEEPALIVECOMPONENTS', {k: to.name, b: false})
+  }
+  console.log(store.state.keepAlive.keepAliveComponent)
+
+
 
   if (Vue.prototype.$openPremission) { // 开启权限
     // store.getters.token
