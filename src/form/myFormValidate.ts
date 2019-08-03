@@ -23,9 +23,7 @@ Validator.localize(dictionary)
  
 // 非中文字符校验
 Validator.extend('noCN', {
-    messages: {
-        zh_CN: (field: string): string => field + '不能包含中文字符'
-    },
+    getMessage: (field: string): string => field + '不能包含中文字符',
     validate: (value: string): boolean => {
         return !/[\u4e00-\u9fa5]/.test(value)
     }
@@ -33,9 +31,7 @@ Validator.extend('noCN', {
  
 // 不能包含空格校验
 Validator.extend('noSpace', {
-    messages: {
-        zh_CN: (field: string): string => field + '不能包含空格'
-    },
+    getMessage: (field: string): string => field + '不能包含空格',
     validate: (value: string): boolean => {
         return /^\S*$/.test(value)
     }
@@ -51,15 +47,4 @@ Validator.extend('phone', {
 Validator.extend('code', {
     getMessage: (field: string): string => `${field}错误`,
     validate: (value: string): boolean => /^\d{4}$/.test(value)
-})
-
-
-
-//接收v-validate中传递的参数   例如: v-validate="'required|numBetween:10,100'"
-//                                                                  min, max
-Validator.extend('numBetween', {
-    getMessage: (field: string): string => `${field}错误，请重新输入`,
-    validate: (value: number, {min, max}: {min: number, max: number}): boolean => value >= min && value <=max
-}, {
-    paramNames: ['min', 'max']
 })
